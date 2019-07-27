@@ -7,8 +7,6 @@ const validateUrl = `${endpoint}/validate`
 const jsonify = res => {
     if (res.ok)
         return res.json()
-    else
-        throw new Error(res.json())
 }
 const handleServerError = response => console.error(response)
 
@@ -56,9 +54,16 @@ const validateUser = () => {
 
 const clearToken = () => localStorage.removeItem('token')
 
+const getData = () => {
+    fetch('http://localhost:3000/api/v1/orders')
+    .then(resp => resp.json())
+    .then(console.log)
+}
+
 export default {
     signUp,
     logIn,
     validateUser,
-    clearToken
+    clearToken,
+    getData
 }

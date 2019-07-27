@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import Navbar from './components/Navbar';
 import './App.css';
 
@@ -43,7 +42,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <h1 className="logo">Pizzaroo!</h1>
         <Navbar user={this.state.user} signUp={this.signUp} logIn={this.logIn} logOut={this.logOut} />
+        <button onClick={API.getData}>Get data</button>
       </div>
     );
   }

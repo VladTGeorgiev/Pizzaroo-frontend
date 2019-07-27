@@ -9,7 +9,7 @@ const Navbar = ({ user, signUp, logIn, logOut }) => {
                 user ? <div><button onClick={logOut}>Log out</button></div> :
                     <>
                         <UserForm submit={signUp} header={'Sign up'} />
-                        or
+                        <p style={{display: 'flex', justifyContent: 'center'}}>or</p>
                         <UserForm submit={logIn} header={'Log in'} />
                     </>
             }
